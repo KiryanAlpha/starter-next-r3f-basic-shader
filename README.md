@@ -9,6 +9,7 @@ npm install three@latest
 npm install three @types/three
 npm install @react-three/fiber
 npm install @react-three/drei
+npm install raw-loader
 ```
 
 Second, run the development server:
