@@ -1,8 +1,23 @@
 'use client';
 
-import { OrbitControls } from "@react-three/drei";
-import { Canvas } from "@react-three/fiber";
+import * as THREE from "three";
+import { OrbitControls, shaderMaterial } from "@react-three/drei";
+import { Canvas, extend } from "@react-three/fiber";
 import Image from "next/image";
+import vertexShader from "../shaders/vertex.glsl";
+import fragmentShader from "../shaders/fragment.glsl"
+
+const BoxShaderMaterial = shaderMaterial(
+  {
+    uTime:0,
+    uColorStart: new THREE.Color('#ffffff'),
+    uColorEnd: new THREE.Color('#000000')
+  },
+  vertexShader,
+  fragmentShader
+)
+
+extend({ BoxShaderMaterial })
 
 export default function Home() {
   return (
@@ -19,13 +34,13 @@ export default function Home() {
         <Canvas>
           <mesh scale={2.5}>
             <boxGeometry args={[1, 1, 1]} />
-            <meshNormalMaterial wireframe />
+            <boxShaderMaterial wireframe/>
           </mesh>
           <ambientLight />
           <OrbitControls />
         </Canvas>
         <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-          + r3f basic starter.
+          + r3f basic shaderMaterial starter.
         </h1>
         <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
           Starting point.
