@@ -1,28 +1,26 @@
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
+## Starter Next.js with React Three Fiber (r3f)
+
+Basic Shader material starter for Next.js projects with React Three Fiber for 3D web experiences.
+
 ## Getting Started
 
-First, install Dependencies:
+1. Clone the repository:
 
-```bash
-npm install three@latest
-npm install three @types/three
-npm install @react-three/fiber
-npm install @react-three/drei
-npm install raw-loader
-```
+git clone https://github.com/KiryanAlpha/starter-next-r3f-basic-shader.git
 
-Second, run the development server:
+cd starter-next-r3f-basic-shader
 
-```bash
+2. Install dependencies:
+
+npm install
+
+(This will automatically install three, @react-three/fiber, @react-three/drei, and all other required packages from package.json.)
+
+3. Run the development server:
+
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
